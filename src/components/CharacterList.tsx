@@ -44,7 +44,7 @@ export function CharacterList({
             >
               <div className="flex items-center justify-between">
                 <div className="flex-1">
-                  <h3 className="text-white font-semibold">{character.name}</h3>
+                  <h3 className="text-white font-semibold">{character.name} {character.last_name}</h3>
                   <p className="text-slate-400 text-sm">
                     {job ? job.name : 'Unemployed'} • Age {character.age}
                   </p>
