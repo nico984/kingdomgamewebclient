@@ -1,5 +1,5 @@
 import { Character, Job } from '../types/database';
-import { Heart, Zap, Brain, Users } from 'lucide-react';
+import { Heart, Zap, Brain, Users, Eye } from 'lucide-react';
 
 interface CharacterListProps {
   characters: Character[];
@@ -57,6 +57,13 @@ export function CharacterList({
                       {character.strength}
                     </span>
                   </div>
+                  
+                  <div className="flex items-center gap-1">
+                    <Users className={`w-4 h-4 ${getStat(character.perception)}`} />
+                    <span className={`text-sm font-semibold ${getStat(character.perception)}`}>
+                      {character.perception}
+                    </span>
+                  </div>
 
                   <div className="flex items-center gap-1">
                     <Brain className={`w-4 h-4 ${getStat(character.intelligence)}`} />
@@ -79,8 +86,8 @@ export function CharacterList({
                 </div>
 
                 <div className="ml-4 text-right">
-                  <p className="text-amber-400 font-semibold text-sm">Loyalty</p>
-                  <p className="text-white text-lg">{character.loyalty}%</p>
+                  <p className="text-amber-400 font-semibold text-sm">Health</p>
+                  <p className="text-white text-lg">{character.health}%</p>
                 </div>
               </div>
             </div>
