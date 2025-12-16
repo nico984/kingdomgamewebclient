@@ -72,8 +72,8 @@ export function CharacterDetail({
   }
 
   const getStat = (value: number) => {
-    if (value >= 15) return 'text-green-400';
-    if (value >= 12) return 'text-blue-400';
+    if (value >= 18) return 'text-green-400';
+    if (value >= 14) return 'text-blue-400';
     if (value >= 8) return 'text-yellow-400';
     return 'text-red-400';
   };
