@@ -1,5 +1,5 @@
 import { Character, Job } from '../types/database';
-import { Heart, Zap, Brain, Users, Eye } from 'lucide-react';
+import { Arm, Heart, Zap, Brain, Users, Eye } from 'lucide-react';
 
 interface CharacterListProps {
   characters: Character[];
@@ -52,7 +52,7 @@ export function CharacterList({
 
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-1">
-                    <Heart className={`w-4 h-4 ${getStat(character.strength)}`} />
+                    <Arm className={`w-4 h-4 ${getStat(character.strength)}`} />
                     <span className={`text-sm font-semibold ${getStat(character.strength)}`}>
                       {character.strength}
                     </span>
