@@ -52,7 +52,7 @@ export function CharacterList({
 
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-1">
-                    <biceps-flexed className={`w-4 h-4 ${getStat(character.strength)}`} />
+                    <BicepsFlexed className={`w-4 h-4 ${getStat(character.strength)}`} />
                     <span className={`text-sm font-semibold ${getStat(character.strength)}`}>
                       {character.strength}
                     </span>
