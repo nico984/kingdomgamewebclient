@@ -1,5 +1,5 @@
 import { Character, Job } from '../types/database';
-import { BicepsFlexed, Heart, Zap, Brain, Users, Eye } from 'lucide-react';
+import { BicepsFlexed, Rabbit, Clover, Heart, Zap, Brain, Users, Eye } from 'lucide-react';
 
 interface CharacterListProps {
   characters: Character[];
@@ -15,8 +15,8 @@ export function CharacterList({
   selectedCharacterId,
 }: CharacterListProps) {
   const getStat = (value: number) => {
-    if (value >= 15) return 'text-green-400';
-    if (value >= 12) return 'text-blue-400';
+    if (value >= 18) return 'text-green-400';
+    if (value >= 14) return 'text-blue-400';
     if (value >= 8) return 'text-yellow-400';
     return 'text-red-400';
   };
@@ -66,9 +66,9 @@ export function CharacterList({
                   </div>
 
                   <div className="flex items-center gap-1">
-                    <Brain className={`w-4 h-4 ${getStat(character.intelligence)}`} />
-                    <span className={`text-sm font-semibold ${getStat(character.intelligence)}`}>
-                      {character.intelligence}
+                    <Zap className="w-4 h-4 text-purple-400" />
+                    <span className={`text-sm font-semibold ${getStat(character.energy)}`}>
+                      {character.energy}
                     </span>
                   </div>
 
@@ -80,9 +80,26 @@ export function CharacterList({
                   </div>
 
                   <div className="flex items-center gap-1">
-                    <Zap className="w-4 h-4 text-purple-400" />
-                    <span className="text-sm font-semibold text-purple-400">{character.energy}</span>
+                    <Brain className={`w-4 h-4 ${getStat(character.intelligence)}`} />
+                    <span className={`text-sm font-semibold ${getStat(character.intelligence)}`}>
+                      {character.intelligence}
+                    </span>
                   </div>
+
+                  <div className="flex items-center gap-1">
+                    <Rabbit className={`w-4 h-4 ${getStat(character.agility)}`} />
+                    <span className={`text-sm font-semibold ${getStat(character.agility)}`}>
+                      {character.agility}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-1">
+                    <Clover className={`w-4 h-4 ${getStat(character.luck)}`} />
+                    <span className={`text-sm font-semibold ${getStat(character.luck)}`}>
+                      {character.luck}
+                    </span>
+                  </div>
+
                 </div>
 
                 <div className="ml-4 text-right">
