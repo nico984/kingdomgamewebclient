@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Character, Job } from '../types/database';
 import { assignJob, removeJob, deleteCharacter } from '../services/characterService';
-import { Heart, Eye, Brain, Users, Zap, Trash2, X } from 'lucide-react';
+import { BicepsFlexed, Heart, Eye, Brain, Users, Zap, Trash2, X } from 'lucide-react';
 
 interface CharacterDetailProps {
   character: Character;
@@ -118,7 +118,7 @@ export function CharacterDetail({
         <div className={`p-4 rounded-lg border border-slate-600 ${getStatColor(character.strength)}`}>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Heart className={`w-5 h-5 ${getStat(character.strength)}`} />
+              <BicepsFlexed className={`w-5 h-5 ${getStat(character.strength)}`} />
               <span className="text-white font-semibold">Strength</span>
             </div>
             <span className={`text-lg font-bold ${getStat(character.strength)}`}>
