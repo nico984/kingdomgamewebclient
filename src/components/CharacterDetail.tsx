@@ -144,10 +144,12 @@ export function CharacterDetail({
         <div className={`p-4 rounded-lg border border-slate-600 ${getStatColor(character.energy)}`}>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Zap className={`w-5 h-5 ${getStat(character.perception)}`} />
+              <Zap className={`w-5 h-5 ${getStat(character.energy)}`} />
               <span className="text-white font-semibold">Energy</span>
             </div>
-            <span className="text-lg font-bold text-purple-400">{character.energy}</span>
+            <span className={`text-lg font-bold ${getStat(character.energy)}`}>
+              {character.energy}
+            </span>
           </div>
           <p className="text-slate-400 text-xs mt-1">Helps with working longer</p>
         </div>
