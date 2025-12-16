@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Character, Job } from '../types/database';
 import { assignJob, removeJob, deleteCharacter } from '../services/characterService';
-import { BicepsFlexed, Heart, Eye, Brain, Users, Zap, Trash2, X } from 'lucide-react';
+import { BicepsFlexed, Clover, Rabbit, Heart, Eye, Brain, Users, Zap, Trash2, X } from 'lucide-react';
 
 interface CharacterDetailProps {
   character: Character;
@@ -79,8 +79,8 @@ export function CharacterDetail({
   };
 
   const getStatColor = (value: number) => {
-    if (value >= 15) return 'bg-green-500/20';
-    if (value >= 12) return 'bg-blue-500/20';
+    if (value >= 18) return 'bg-green-500/20';
+    if (value >= 14) return 'bg-blue-500/20';
     if (value >= 8) return 'bg-yellow-500/20';
     return 'bg-red-500/20';
   };
@@ -141,17 +141,15 @@ export function CharacterDetail({
           <p className="text-slate-400 text-xs mt-1">Helps with staying alive</p>
         </div>
 
-        <div className={`p-4 rounded-lg border border-slate-600 ${getStatColor(character.intelligence)}`}>
+        <div className="p-4 rounded-lg border border-slate-600 bg-purple-500/20">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Brain className={`w-5 h-5 ${getStat(character.intelligence)}`} />
-              <span className="text-white font-semibold">Intelligence</span>
+              <Zap className="w-5 h-5 text-purple-400" />
+              <span className="text-white font-semibold">Energy</span>
             </div>
-            <span className={`text-lg font-bold ${getStat(character.intelligence)}`}>
-              {character.intelligence}
-            </span>
+            <span className="text-lg font-bold text-purple-400">{character.energy}</span>
           </div>
-          <p className="text-slate-400 text-xs mt-1">Required for research and engineering</p>
+          <p className="text-slate-400 text-xs mt-1">Helps with working longer</p>
         </div>
 
         <div className={`p-4 rounded-lg border border-slate-600 ${getStatColor(character.charisma)}`}>
@@ -167,15 +165,43 @@ export function CharacterDetail({
           <p className="text-slate-400 text-xs mt-1">Important for trade and diplomacy</p>
         </div>
 
-        <div className="p-4 rounded-lg border border-slate-600 bg-purple-500/20">
+        <div className={`p-4 rounded-lg border border-slate-600 ${getStatColor(character.intelligence)}`}>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Zap className="w-5 h-5 text-purple-400" />
-              <span className="text-white font-semibold">Energy</span>
+              <Brain className={`w-5 h-5 ${getStat(character.intelligence)}`} />
+              <span className="text-white font-semibold">Intelligence</span>
             </div>
-            <span className="text-lg font-bold text-purple-400">{character.energy}</span>
+            <span className={`text-lg font-bold ${getStat(character.intelligence)}`}>
+              {character.intelligence}
+            </span>
           </div>
-          <p className="text-slate-400 text-xs mt-1">Helps with working longer</p>
+          <p className="text-slate-400 text-xs mt-1">Required for research and engineering</p>
+        </div>
+
+        <div className={`p-4 rounded-lg border border-slate-600 ${getStatColor(character.agility)}`}>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Rabbit className={`w-5 h-5 ${getStat(character.agility)}`} />
+              <span className="text-white font-semibold">Agility</span>
+            </div>
+            <span className={`text-lg font-bold ${getStat(character.agility)}`}>
+              {character.agility}
+            </span>
+          </div>
+          <p className="text-slate-400 text-xs mt-1">Important for trade and diplomacy</p>
+        </div>
+
+        <div className={`p-4 rounded-lg border border-slate-600 ${getStatColor(character.luck)}`}>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Clover className={`w-5 h-5 ${getStat(character.luck)}`} />
+              <span className="text-white font-semibold">Luck</span>
+            </div>
+            <span className={`text-lg font-bold ${getStat(character.luck)}`}>
+              {character.luck}
+            </span>
+          </div>
+          <p className="text-slate-400 text-xs mt-1">Increases chances for good things</p>
         </div>
       </div>
 
