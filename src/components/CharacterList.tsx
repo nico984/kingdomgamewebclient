@@ -25,7 +25,7 @@ export function CharacterList({
     <div className="space-y-2">
       {characters.length === 0 ? (
         <div className="text-center py-8 text-slate-400">
-          <p>No citizens yet. You can create them through your Python backend.</p>
+          <p>No citizens yet.</p>
         </div>
       ) : (
         characters.map((character) => {
